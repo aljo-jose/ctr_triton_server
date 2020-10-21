@@ -41,7 +41,7 @@ from distutils.dir_util import copy_tree
 # Build Triton Inference Server.
 #
 EXAMPLE_BACKENDS = ['identity', 'square', 'repeat']
-CORE_BACKENDS = ['pytorch', 'tensorrt', 'custom', 'ensemble']
+CORE_BACKENDS = ['tensorrt', 'custom', 'ensemble']
 NONCORE_BACKENDS = [
     'tensorflow1', 'tensorflow2', 'onnxruntime', 'python', 'dali', 'pytorch'
 ]
@@ -201,7 +201,7 @@ def core_cmake_args(components, backends, install_dir):
                 fail('unknown core backend {}'.format(be))
 
     cargs.append(
-        '-DTRITON_EXTRA_LIB_PATHS=/opt/tritonserver/lib;/opt/tritonserver/lib/caffe2'
+        '-DTRITON_EXTRA_LIB_PATHS=/opt/tritonserver/lib'
     )
     cargs.append('/workspace/build')
     return cargs
@@ -644,7 +644,6 @@ COPY --chown=1000:1000 LICENSE .
 COPY --chown=1000:1000 VERSION .
 COPY --chown=1000:1000 --from=tritonserver_build /tmp/tritonbuild/install/bin/tritonserver bin/
 COPY --chown=1000:1000 --from=tritonserver_build /tmp/tritonbuild/install/lib/libtritonserver.so lib/
-COPY --chown=1000:1000 --from=tritonserver_build /opt/tritonserver/lib/caffe2 lib/caffe2
 COPY --chown=1000:1000 --from=tritonserver_build /opt/tritonserver/backends/onnxruntime/* backends/onnxruntime/
 COPY --chown=1000:1000 --from=tritonserver_build /opt/tritonserver/backends/pytorch/* backends/pytorch/
 '''.format(argmap['TRITON_VERSION'], argmap['TRITON_CONTAINER_VERSION'],
