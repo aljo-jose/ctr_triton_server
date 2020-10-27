@@ -1,3 +1,8 @@
 /builddir
 /.vscode
 *.so
+.DS_Store
+src/.DS_Store
+src/clients/.DS_Store
+src/clients/python/.DS_Store
+src/clients/python/examples/.DS_Store

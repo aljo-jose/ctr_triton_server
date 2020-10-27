@@ -1,0 +1,22 @@
+name: "pt_adder"
+platform: "pytorch_libtorch"
+max_batch_size: 8
+input [
+  {
+    name: "INPUT0__0"
+    data_type: TYPE_INT32
+    dims: [ 16 ]
+  },
+  {
+    name: "INPUT1__1"
+    data_type: TYPE_INT32
+    dims: [ 16 ]
+  }
+]
+output [
+  {
+    name: "OUTPUT0__0"
+    data_type: TYPE_INT32
+    dims: [ 16 ]
+  }
+]
