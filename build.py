@@ -319,7 +319,7 @@ RUN cd pytorch && \
     CMAKE_PREFIX_PATH="$(dirname $(which conda))/../" \
     USE_DISTRIBUTED=OFF USE_OPENMP=OFF USE_NCCL=OFF USE_SYSTEM_NCCL=OFF \
     USE_OPENCV=OFF USE_LEVELDB=OFF USE_LMDB=OFF USE_REDIS=OFF \
-    BUILD_TEST=OFF \
+    BUILD_TEST=OFF DEBUG=1 \
     pip install --no-cache-dir -v .
 
 ############################################################################
