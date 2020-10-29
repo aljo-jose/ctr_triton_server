@@ -28,7 +28,7 @@ def test_infer(model_name, input0_data, headers=None):
     return results
 
 if __name__ == '__main__':
-    model_name = "wd"
+    model_name = "wd" # to do.
 
     # Create the data for the two input tensors. Initialize the first
     # to unique integers and the second to all ones.
