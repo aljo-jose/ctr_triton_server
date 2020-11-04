@@ -5,12 +5,12 @@ input [
   {
     name: "INPUT0__0"
     data_type: TYPE_INT32
-    dims: [ 16 ]
+    dims: [ 16,8 ]
   },
   {
     name: "INPUT1__1"
     data_type: TYPE_INT32
-    dims: [ 16 ]
+    dims: [ 16,9 ]
   }
 ]
 output [
