@@ -1,0 +1,23 @@
+name: "dfm"
+platform: "pytorch_libtorch"
+max_batch_size: 0
+input [
+  {
+    name: "INPUT0__0"
+    data_type: TYPE_INT32
+    dims: [-1,39]
+  }
+]
+output [
+  {
+    name: "OUTPUT0__0"
+    data_type: TYPE_FP32
+    dims: [ -1]
+  }
+]
+instance_group [
+  {
+    count: 1
+    kind: KIND_GPU
+  }
+]
